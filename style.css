@@ -1,0 +1,402 @@
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    margin: 0;
+    background-color: #000;
+    /* background: url('large-map.png'); */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+canvas{
+    position: fixed;
+    z-index: -1;
+}
+
+.logo {
+    position: absolute;
+    top: 0px;
+    display: block;
+    white-space: pre;
+    overflow: hidden;
+    height: 100%;
+    /* top: 30px;
+    left: 30px; */
+    opacity: 1;
+    z-index: 1000;
+}
+
+.logo img {
+    /* position: absolute; */
+    width: 100px;
+}
+
+
+
+
+
+.image-left {
+    margin: 1em 0;
+}
+
+@media (min-width: 20em) {
+    .image-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .image-left img {
+        margin-right: 1em;
+        float: left;
+        /* fallback */
+    }
+
+    /* clearfix for fallback */
+    .image-left::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@media (min-width: 30em) {
+    .image-left img {
+        flex-shrink: 0;
+    }
+}
+
+
+
+/* .demos {
+    text-align: center;
+    margin-top: 20px;
+    width: 490px;
+    margin: auto;
+} */
+
+.demo-image {
+    cursor: url("http://tholman.com/intense-images/img/plus_cursor.png") 25 25, auto;
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 16px;
+    border-radius: 33px;
+}
+
+.demo-image.first {
+    background-image: url("http://tholman.com/intense-images/img/h1_small.jpg");
+}
+
+.demo-image.second {
+    background-position: 50% 10%;
+    background-image: url("http://tholman.com/intense-images/img/v1_small.jpg");
+}
+
+
+/* Nav */
+/* .nav {
+    width: 100%;
+    padding: 10px;
+    height: 25px;
+    background-color: #131313;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.nav-inner {
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+} */
+
+.main-container {
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: default;
+    /* cursor: -o-grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab; */
+    position: relative;
+}
+
+.scrollable-area {
+    /* width: 160%; */
+    width: 260%;
+    height: 160%;
+    padding-top: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .main-container {
+        overflow-x: hidden;
+    }
+
+    .scrollable-area {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+.slide {
+    display: block;
+    margin: 0 auto;
+}
+
+.block {
+    background-color: red;
+    height: 200px !important;
+}
+
+/* Masonry */
+.masonry {
+    /* -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4; */
+    -webkit-column-gap: 1em;
+    -moz-column-gap: 1em;
+    column-gap: 1em;
+    margin: 1.5em;
+    padding: 0;
+    /* -moz-column-gap: 1.5em; */
+    /* -webkit-column-gap: 1.5em; */
+    /* column-gap: 1.5em; */
+    font-size: .85em;
+}
+
+.item, .demos {
+    display: inline-block;
+    /* background: #ffffff; */
+    /* margin: 0 0 1.5em; */
+    /* width: 100%; */
+    transition: 1s ease all;
+    -webkit-transition: 1s ease all;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    /* border: 1px solid #d1d1d1; */
+    border-radius: 5px;
+}
+
+.center_logo {
+    display: inline-block;
+    /* background-color: #ffffff; */
+    background: url('map.png');
+    /* margin: 0 0 1.5em; */
+    width: 100%;
+    transition: 1s ease all;
+    -webkit-transition: 1s ease all;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+    /* text-align: center; */
+    /* border: 1px solid #d1d1d1; */
+    border-radius: 5px;
+    padding: 23px;
+    height: 100%;
+}
+
+.center_logo .center_text {
+    /* display: flex;
+    justify-content: center; */
+    text-align: center;
+    font-size: 34px;
+}
+
+.item1 {
+    display: inline-block;
+    /* background-color: #ffffff; */
+    background: url('map.png');
+    /* margin: 0 0 1.5em; */
+    /* width: 100%; */
+    transition: 1s ease all;
+    -webkit-transition: 1s ease all;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    /* border: 1px solid #d1d1d1; */
+    border-radius: 5px;
+    padding: 23px;
+    height: 85px;
+}
+
+.item2 {
+    background: url('map.png');
+    height: 85px;
+    margin: 3px;
+}
+
+/* .item1:hover {
+    background: none;
+} */
+
+.item img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 33px;
+}
+
+@media only screen and (max-width: 320px) {
+    .masonry {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+    .masonry {
+        /* -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4; */
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .masonry {
+        /* -moz-column-count: 6;
+        -webkit-column-count: 6;
+        column-count: 6; */
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+
+
+/* //////////////////////////////////// */
+.hold {
+    padding: 100px 200px !important;
+    transition-duration: 3s;
+}
+
+.release {
+    padding: 10px 20px !important;
+    transition-duration: 1s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.xcNeon {
+    ---width: 400px;
+    ---height: 200px;
+    ---background: red;
+    ---backgroundRange: var(---width);
+    ---backgroundAnimationTime: 20s;
+    ---glow: 20px;
+    ---pixel: 10px;
+    ---blendMode: screen;
+    ---text: "Foobar";
+    ---textAnimationTime: 10s;
+    ---textColor: #fff;
+    ---maskShape: radial-gradient(black 50%, transparent 50%);
+    position: relative;
+    display: inline-block;
+    width: var(---width);
+    height: var(---height);
+  }
+  .xcNeon ._grid, .xcNeon ._backlight {
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: var(---screen);
+  }
+  .xcNeon ._grid {
+    background: var(---background);
+    background-size: var(---backgroundRange) var(---height);
+    background-position: 0 0;
+    -webkit-mask-image: var(---maskShape);
+    -webkit-mask-size: var(---pixel) var(---pixel);
+    mask-image: var(---maskShape);
+    mask-size: var(---pixel) var(---pixel);
+    animation: fade var(---backgroundAnimationTime) infinite;
+    animation-timing-function: linear;
+  }
+  .xcNeon > ._backlight {
+    filter: blur(var(---glow));
+  }
+  .xcNeon > ._grid::after {
+    overflow: hidden;
+    content: var(---text);
+    color: var(---textColor);
+    font-size: var(---height);
+    line-height: var(---height);
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    padding: 0 0.4em;
+    animation: marquee var(---textAnimationTime) infinite;
+    animation-timing-function: linear;
+    text-shadow: 0 0 0.2em var(---textColor), 0 0 0.4em var(---textColor);
+  }
+  
+  @keyframes fade {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: var(---backgroundRange) 0;
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translate(110%, -50%);
+    }
+    100% {
+      transform: translate(-110%, -50%);
+    }
+  }
